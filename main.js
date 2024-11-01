@@ -1,3 +1,3 @@
-document.addEventListener('DOMContentLoaded',()=>{
-console.log("Welcome to Itothya General Agencies Ltd!");
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+  document.querySelector('.nav-wrapper').classList.toggle('active');
 });
