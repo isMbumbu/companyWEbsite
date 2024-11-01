@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -7,6 +8,7 @@ body {
   padding: 0;
 }
 
+/* Header */
 header {
   background-color: #005f99;
   color: #fff;
@@ -15,7 +17,8 @@ header {
 }
 
 header h1 {
-  font-size: 2em;
+  font-size: 1.8em; /* Slightly smaller font for better responsiveness */
+  margin: 0;
 }
 
 header p {
@@ -23,11 +26,15 @@ header p {
   margin-bottom: 10px;
 }
 
+/* Navigation */
 nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
   gap: 15px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Allows items to wrap on small screens */
 }
 
 nav ul li {
@@ -46,6 +53,7 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+/* Main Content */
 .main-content {
   display: grid;
   grid-template-columns: 1fr; /* Default to single column */
@@ -71,6 +79,7 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* Footer */
 footer {
   background-color: #005f99;
   color: #fff;
@@ -79,9 +88,59 @@ footer {
   margin-top: 20px;
 }
 
-/* Grid Layout for larger screens */
+/* Responsive Styles */
+
+/* Grid Layout for medium screens */
 @media (min-width: 768px) {
   .main-content {
-    grid-template-columns: 1fr 1fr; /* Two columns on medium and larger screens */
+    grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+  }
+  
+  header h1 {
+    font-size: 2em; /* Larger header text on medium screens */
+  }
+}
+
+/* Grid Layout for large screens */
+@media (min-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns on large screens */
+    padding: 40px; /* Extra padding for spacious layout */
+  }
+
+  section {
+    padding: 30px; /* More padding for larger screens */
+  }
+  
+  header h1 {
+    font-size: 2.5em; /* Larger header text on large screens */
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5em; /* Smaller header text on small screens */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stacks nav items vertically on mobile */
+    gap: 10px;
+  }
+
+  nav ul li a {
+    padding: 10px; /* Larger padding for easier tapping on mobile */
+  }
+
+  .main-content {
+    padding: 10px; /* Less padding to fit small screens */
+  }
+
+  section {
+    padding: 15px; /* Smaller padding for mobile */
+  }
+
+  footer {
+    padding: 15px;
   }
 }
